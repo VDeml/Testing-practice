@@ -3,6 +3,9 @@ function capitalize(string) {
     return firstLetter.toUpperCase() + string.slice(1)
 }
 
+function reverseString(string) {
+    return string.split("").reverse().join("")
+}
 
 
-export { capitalize };
+export { capitalize, reverseString };
