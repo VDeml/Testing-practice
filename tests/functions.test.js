@@ -1,5 +1,5 @@
 import { test, expect } from "@jest/globals";
-import { capitalize, reverseString, calculator } from "../src/functions.js"
+import { capitalize, reverseString, calculator, caesarCipher } from "../src/functions.js"
 
 test("capitalize hello to Hello", () => {
   expect(capitalize("hello")).toBe("Hello");
@@ -23,4 +23,8 @@ test("calculator divide 4 / 2", () => {
 
 test("calculator multiply 2 * 2", () => {
     expect(calculator.multiply(2, 2)).toBe(4)
+})
+
+test("caesar cipher + 2 so abc becomes cde", () => {
+    expect(caesarCipher("a0B!", 3)).toBe("d0E!")
 })
