@@ -26,7 +26,7 @@ function caesarCipher(string, shiftBy) {
 
     const lowerAlphabet = "abcdefghijklmnopqrstuvwxyz";
     const upperAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    
+
     // handles negative numbers and numbers higher than the amount of letters in the alphabet
     shiftBy = ((shiftBy % 26) + 26) % 26;
 
@@ -47,4 +47,33 @@ function caesarCipher(string, shiftBy) {
 }
 
 
-export { capitalize, reverseString, calculator, caesarCipher };
+function analyzeArray(array) {
+
+    let total = array.reduce((prev, curr)=> prev + curr)
+    const average = total / array.length
+
+    let min = Infinity;
+    let max = -Infinity
+    function getMinValue(arr) {
+        for(let i = 0; i < arr.length; i++) {
+            if(arr[i] < min) {
+                min = arr[i]
+            }
+        }
+    }
+    getMinValue(array)
+
+    function getMaxValue(arr) {
+        for(let i = 0; i < arr.length; i++) {
+            if(arr[i] > max) {
+                max = arr[i]
+            }
+        }
+    }
+    getMaxValue(array)
+
+    const length = array.length
+    return {length, total, average, min, max} 
+}
+
+export { capitalize, reverseString, calculator, caesarCipher, analyzeArray };
